@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>卓韋廷｜個人名片</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans TC', sans-serif; }
+    
+    /* 載入動畫 */
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #c51350;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 表單錯誤提示 */
+    .error-message {
+      font-size: 0.875rem;
+      color: #dc2626;
+      margin-top: 0.25rem;
+    }
+
+    /* 成功提示動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-alert {
+      animation: fadeIn 0.3s ease-in;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-100 min-h-screen flex flex-col py-12 px-4">
+
+  <!-- 主卡片 -->
+  <div class="flex-1 flex items-center justify-center">
+    <div class="max-w-md w-full bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border-2 border-pink-200 
+                transition-all duration-500 hover:scale-[1.02] hover:border-[#c51350]/50 hover:shadow-3xl hover:shadow-[#8a1253]/30">
+
+      <!-- 螢光漸層頂條 -->
+      <div class="h-3 bg-gradient-to-r from-[#fda403] via-[#e8751a] to-[#8a1253] shadow-lg"></div>
+
+      <div class="p-8 md:p-10 text-center">
+
+        <!-- 個人頭像（已改成本地檔案）-->
+        <div class="group mx-auto w-36 h-36 mb-8 rounded-full overflow-hidden border-4 border-[#c51350] shadow-2xl 
+                    transition-all duration-500 hover:scale-110 hover:border-[#fda403] hover:shadow-[#c51350]/50">
+          <img src="myphoto.jpg" alt="卓韋廷" class="w-full h-full object-cover"/>
+        </div>
+
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">卓韋廷</h1>
+        <p class="text-[#c51350] font-bold text-lg mb-8">健康事業管理系 四年乙班</p>
+
+        <div class="text-gray-700 leading-relaxed mb-10 text-left bg-gradient-to-r from-pink-50/80 to-purple-50/80 p-6 rounded-2xl border border-[#e8751a]/20">
+          哈囉！我是韋廷,目前就讀弘光科技大學健康事業管理系。<br>
+          熱愛流行病學、生物統計與醫療法規，期待未來能結合管理與資訊能力，<br>
+          為台灣醫療環境帶來更高效、更人性化的改變！
+        </div>
+
+        <div class="mb-10">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4 text-left">興趣與專長</h3>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <span class="px-5 py-2.5 bg-[#fda403]/10 text-[#e8751a] border border-[#fda403]/30 rounded-full font-medium hover:bg-[#fda403]/20 hover:scale-110 transition">流行病學</span>
+            <span class="px-5 py-2.5 bg-[#c51350]/10 text-[#c51350] border border-[#c51350]/30 rounded-full font-medium hover:bg-[#c51350]/20 hover:scale-110 transition">醫療法規</span>
+            <span class="px-5 py-2.5 bg-[#8a1253]/10 text-[#8a1253] border border-[#8a1253]/30 rounded-full font-medium hover:bg-[#8a1253]/20 hover:scale-110 transition">生物統計學</span>
+            <span class="px-5 py-2.5 bg-pink-100 text-pink-700 rounded-full font-medium hover:bg-pink-200 hover:scale-110 transition">醫護術語</span>
+            <span class="px-5 py-2.5 bg-purple-100 text-purple-700 rounded-full font-medium hover:bg-purple-200 hover:scale-110 transition">企劃實務</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="openContactForm()" 
+                  class="px-8 py-4 bg-[#c51350] hover:bg-[#e8751a] text-white font-bold rounded-xl shadow-xl shadow-[#c51350]/40 hover:shadow-[#e8751a]/50 transform hover:scale-105 transition">
+            點我聯絡我
+          </button>
+          <a href="mailto:wetim9212253@gmail.com"
+             class="px-8 py-4 bg-[#8a1253] hover:bg-[#c51350] text-white font-bold rounded-xl shadow-xl shadow-[#8a1253]/50 hover:shadow-[#c51350]/50 transform hover:scale-105 transition">
+            寄信給我
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-16 mb-8 text-center">
+    <div class="inline-flex items-center gap-4 px-8 py-6 bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-[#c51350]/30">
+      <div class="text-left">
+        <div class="text-2xl font-bold text-[#c51350]">弘光科技大學</div>
+        <div class="text-lg font-semibold text-[#8a1253]">管理學院 • 健康事業管理系</div>
+        <div class="text-sm text-gray-600 mt-1">Hungkuang University • Dept. of Healthcare Administration</div>
+      </div>
+      <div class="w-20 h-20 rounded-xl overflow-hidden border-4 border-[#fda403]/50 shadow-lg">
+        <img src="hk-logo.png" alt="弘光校徽" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+    <p class="mt-6 text-gray-500 text-sm">© 2025 卓韋廷 All Rights Reserved</p>
+  </footer>
+
+  <!-- 聯絡表單彈窗 -->
+  <dialog id="contactModal" class="rounded-3xl p-0 backdrop:bg-black/70 border-0 shadow-2xl max-w-lg w-full">
+    <div class="bg-gradient-to-br from-white to-pink-50/30 rounded-3xl overflow-hidden">
+      
+      <!-- 表單頭部 -->
+      <div class="bg-gradient-to-r from-[#fda403] via-[#e8751a] to-[#8a1253] p-6 text-center relative">
+        <h3 class="text-3xl font-bold text-white">聯絡卓韋廷</h3>
+        <p class="text-white/90 mt-2">填寫以下資訊，我會盡快回覆您！</p>
+        <button onclick="closeContactForm()" 
+                class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl font-bold transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- 成功訊息 -->
+      <div id="successMessage" class="hidden success-alert bg-green-100 border-l-4 border-green-500 text-green-700 p-4 m-6" role="alert">
+        <p class="font-bold">✓ 送出成功！</p>
+        <p>感謝您的聯絡，我會盡快回覆您的訊息。</p>
+      </div>
+
+      <!-- 表單內容 -->
+      <form id="contactForm" class="p-8 space-y-5" onsubmit="submitForm(event)">
+        
+        <!-- 姓名 -->
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2" for="name">
+            姓名 <span class="text-red-500">*</span>
+          </label>
+          <input type="text" id="name" name="name" required
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#c51350] focus:outline-none transition"
+                 placeholder="請輸入您的姓名">
+          <div id="nameError" class="error-message hidden">請輸入姓名</div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2" for="email">
+            Email <span class="text-red-500">*</span>
+          </label>
+          <input type="email" id="email" name="email" required
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#c51350] focus:outline-none transition"
+                 placeholder="example@email.com">
+          <div id="emailError" class="error-message hidden">請輸入有效的 Email</div>
+        </div>
+
+        <!-- 電話 -->
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2" for="phone">
+            電話 <span class="text-red-500">*</span>
+          </label>
+          <input type="tel" id="phone" name="phone" required
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#c51350] focus:outline-none transition"
+                 placeholder="0912-345-678"
+                 pattern="[0-9\-\+\(\)\s]+">
+          <div id="phoneError" class="error-message hidden">請輸入有效的電話號碼</div>
+        </div>
+
+        <!-- 主旨 -->
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2" for="subject">
+            主旨 <span class="text-red-500">*</span>
+          </label>
+          <input type="text" id="subject" name="subject" required
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#c51350] focus:outline-none transition"
+                 placeholder="請簡述聯絡事由">
+          <div id="subjectError" class="error-message hidden">請輸入主旨</div>
+        </div>
+
+        <!-- 訊息內容 -->
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2" for="message">
+            訊息內容 <span class="text-red-500">*</span>
+          </label>
+          <textarea id="message" name="message" required rows="5"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#c51350] focus:outline-none transition resize-none"
+                    placeholder="請詳細說明您想要聯絡的內容..."></textarea>
+          <div id="messageError" class="error-message hidden">請輸入訊息內容</div>
+        </div>
+
+        <!-- 按鈕區 -->
+        <div class="flex gap-4 pt-4">
+          <button type="submit" id="submitBtn"
+                  class="flex-1 px-8 py-4 bg-[#c51350] hover:bg-[#e8751a] text-white font-bold rounded-xl shadow-xl shadow-[#c51350]/40 hover:shadow-[#e8751a]/50 transform hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2">
+            <span id="submitText">送出訊息</span>
+            <div id="submitSpinner" class="spinner hidden"></div>
+          </button>
+          <button type="button" onclick="closeContactForm()"
+                  class="px-8 py-4 bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold rounded-xl transition">
+            取消
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // ============================================
+    // 請在這裡填入您的 Google Apps Script 網址
+    // ============================================
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6TTeYB2yu9L_2JVKI6Slr0I_-fY59vnInueQ8aJL8OtNcGnV4ZKSxcgHi4uib4x01Vw/exec';
+    // 範例: 'https://script.google.com/macros/s/AKfycbxxx.../exec'
+
+    // 開啟聯絡表單
+    function openContactForm() {
+      document.getElementById('contactModal').showModal();
+      document.getElementById('contactForm').reset();
+      document.getElementById('successMessage').classList.add('hidden');
+    }
+
+    // 關閉聯絡表單
+    function closeContactForm() {
+      document.getElementById('contactModal').close();
+      document.getElementById('contactForm').reset();
+      document.getElementById('successMessage').classList.add('hidden');
+    }
+
+    // 表單驗證
+    function validateForm() {
+      let isValid = true;
+      
+      // 驗證姓名
+      const name = document.getElementById('name').value.trim();
+      if (name === '') {
+        document.getElementById('nameError').classList.remove('hidden');
+        isValid = false;
+      } else {
+        document.getElementById('nameError').classList.add('hidden');
+      }
+
+      // 驗證 Email
+      const email = document.getElementById('email').value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('emailError').classList.remove('hidden');
+        isValid = false;
+      } else {
+        document.getElementById('emailError').classList.add('hidden');
+      }
+
+      // 驗證電話
+      const phone = document.getElementById('phone').value.trim();
+      if (phone === '') {
+        document.getElementById('phoneError').classList.remove('hidden');
+        isValid = false;
+      } else {
+        document.getElementById('phoneError').classList.add('hidden');
+      }
+
+      // 驗證主旨
+      const subject = document.getElementById('subject').value.trim();
+      if (subject === '') {
+        document.getElementById('subjectError').classList.remove('hidden');
+        isValid = false;
+      } else {
+        document.getElementById('subjectError').classList.add('hidden');
+      }
+
+      // 驗證訊息內容
+      const message = document.getElementById('message').value.trim();
+      if (message === '') {
+        document.getElementById('messageError').classList.remove('hidden');
+        isValid = false;
+      } else {
+        document.getElementById('messageError').classList.add('hidden');
+      }
+
+      return isValid;
+    }
+
+    // 送出表單
+    async function submitForm(event) {
+      event.preventDefault();
+
+      // 驗證表單
+      if (!validateForm()) {
+        return;
+      }
+
+      // 檢查是否已設定 Google Script URL
+      if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        alert('請先設定 Google Apps Script URL！\n請參考說明文件完成 Google 試算表設定。');
+        return;
+      }
+
+      // 顯示載入狀態
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const submitSpinner = document.getElementById('submitSpinner');
+      
+      submitBtn.disabled = true;
+      submitText.textContent = '送出中...';
+      submitSpinner.classList.remove('hidden');
+
+      // 收集表單資料
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        subject: document.getElementById('subject').value.trim(),
+        message: document.getElementById('message').value.trim()
+      };
+
+      try {
+        // 送出到 Google 試算表
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Google Apps Script 需要使用 no-cors
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        // 因為 no-cors 模式，我們假設請求成功
+        // 顯示成功訊息
+        document.getElementById('successMessage').classList.remove('hidden');
+        document.getElementById('contactForm').reset();
+
+        // 3 秒後自動關閉
+        setTimeout(() => {
+          closeContactForm();
+        }, 3000);
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert('送出失敗，請稍後再試或直接寄信給我：wetim9212253@gmail.com');
+      } finally {
+        // 恢復按鈕狀態
+        submitBtn.disabled = false;
+        submitText.textContent = '送出訊息';
+        submitSpinner.classList.add('hidden');
+      }
+    }
+
+    // 按 ESC 鍵關閉對話框
+    document.getElementById('contactModal').addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeContactForm();
+      }
+    });
+
+    // 點擊背景關閉對話框
+    document.getElementById('contactModal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeContactForm();
+      }
+    });
+  </script>
+
+</body>
+</html>
